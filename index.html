@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Seguridad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        phishing: {
+                            yellow: '#fcb500',
+                            blue: '#0972ce',
+                            gray: '#808185',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Contenedor Principal -->
+    <main class="w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border-t-8 border-phishing-blue transform transition-all hover:scale-[1.01] duration-300">
+        
+        <!-- Logos Corporativos -->
+        <div class="flex items-center justify-center gap-8 pt-8 px-6">
+            <!-- Logo APB -->
+            <img src="https://ibb.co/kfQq8ZX" 
+                 alt="Logo APB Group" 
+                 class="h-10 md:h-12 object-contain hover:opacity-90 transition-opacity"
+                 onerror="this.style.display='none'; console.log('Asegúrate de que Logo_APB 1.jpg esté en la misma carpeta');">
+            
+            <!-- Separador Vertical -->
+            <div class="h-8 w-px bg-gray-300"></div>
+
+            <!-- Logo ITS (Nuevo) -->
+            <img src="https://ibb.co/wZ4fKzZS" 
+                 alt="Logo ITS" 
+                 class="h-10 md:h-12 object-contain hover:opacity-90 transition-opacity"
+                 onerror="this.style.display='none'; console.log('Asegúrate de que Logo_Nuevo_SinFondo.png esté en la misma carpeta');">
+        </div>
+
+        <!-- Icono y Encabezado Visual -->
+        <div class="flex flex-col items-center justify-center pt-8 pb-6 px-6 text-center">
+            <div class="relative mb-6">
+                <!-- Círculo de fondo animado -->
+                <div class="absolute inset-0 bg-phishing-yellow opacity-20 rounded-full animate-pulse-slow blur-xl"></div>
+                <!-- Icono de Alerta SVG -->
+                <div class="relative bg-phishing-yellow rounded-full p-6 text-white shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Texto Principal -->
+            <h1 class="text-3xl md:text-4xl font-black text-phishing-blue mb-2 uppercase tracking-tight">
+                ¡Atención!
+            </h1>
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">
+                HAS SIDO VICTIMA DE PHISHING
+            </h2>
+        </div>
+
+        <!-- Sección de Contenido Explicativo -->
+        <div class="px-8 pb-8 text-center">
+            <p class="text-phishing-gray text-lg mb-8 leading-relaxed">
+                Esto ha sido un simulacro. Si este fuera un ataque real, tus datos personales, contraseñas o información financiera podrían haber sido comprometidos.
+            </p>
+
+            <!-- Botón de Acción -->
+            <a href="https://www.incibe.es/empresas/tematicas/phishing" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center justify-center w-full px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-phishing-blue rounded-lg hover:bg-blue-700 hover:shadow-lg transform active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <span>Saber más</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Footer del la tarjeta -->
+        <div class="bg-gray-100 px-6 py-4 text-center border-t border-gray-200">
+            <p class="text-xs font-semibold text-phishing-gray uppercase tracking-wider">
+                Campaña de Concienciación de Ciberseguridad
+            </p>
+        </div>
+    </main>
+
+    <!-- Decoración de fondo (opcional) para dar profundidad -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-phishing-blue opacity-5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-phishing-yellow opacity-5 rounded-full blur-3xl"></div>
+    </div>
+
+</body>
+</html>
